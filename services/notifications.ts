@@ -92,7 +92,7 @@ export async function scheduleTaskNotification(task: Task) {
 
     // Get notification frequency based on priority and due date
     const frequencyMinutes = getNotificationFrequency(task.priority, dueDate);
-    
+
     // Schedule the notification
     const notificationId = await Notifications.scheduleNotificationAsync({
       content: {
