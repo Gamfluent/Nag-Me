@@ -9,6 +9,7 @@ export default function Index() {
   const { tasks, toggleComplete, deleteTask } = useTaskStore();
   const [menuVisible, setMenuVisible] = React.useState<string | null>(null);
   const theme = useTheme();
+  const [isAddMenuVisible, setIsAddMenuVisible] = React.useState(false);
 
   const isOverdue = (task: Task) => {
     if (task.completed) return false;
@@ -159,10 +160,33 @@ export default function Index() {
         )}
       </ScrollView>
 
+      {isAddMenuVisible && (
+        <View style={styles.addButtonsContainer}>
+          <FAB
+            icon="robot"
+            label="AI Add"
+            style={styles.addButton}
+            onPress={() => {
+              setIsAddMenuVisible(false);
+              router.push('/add-task?mode=ai');
+            }}
+          />
+          <FAB
+            icon="pencil"
+            label="Manual Add"
+            style={styles.addButton}
+            onPress={() => {
+              setIsAddMenuVisible(false);
+              router.push('/add-task');
+            }}
+          />
+        </View>
+      )}
+
       <FAB
-        icon="plus"
-        style={styles.fab}
-        onPress={() => router.push('/add-task')}
+        icon={isAddMenuVisible ? 'close' : 'plus'}
+        style={styles.mainFab}
+        onPress={() => setIsAddMenuVisible(!isAddMenuVisible)}
       />
     </SafeAreaView>
   );
@@ -246,10 +270,19 @@ const styles = StyleSheet.create({
     opacity: 0.5,
     marginBottom: 16,
   },
-  fab: {
+  addButtonsContainer: {
     position: 'absolute',
-    margin: 16,
-    right: 0,
-    bottom: 0,
+    right: 16,
+    bottom: 88,
+    alignItems: 'flex-end',
+    gap: 8,
+  },
+  addButton: {
+    marginBottom: 8,
+  },
+  mainFab: {
+    position: 'absolute',
+    right: 16,
+    bottom: 16,
   },
 });
