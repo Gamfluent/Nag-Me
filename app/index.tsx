@@ -92,7 +92,7 @@ export default function Index() {
                   <Menu.Item 
                     onPress={() => {
                       setMenuVisible(null);
-                      router.push(`/add-task?taskId=${task.id}`);
+                      router.push(`/(screens)/add-task?taskId=${task.id}`);
                     }} 
                     title={<Text>Edit</Text>}
                   />
@@ -168,7 +168,7 @@ export default function Index() {
             style={styles.addButton}
             onPress={() => {
               setIsAddMenuVisible(false);
-              router.push('/add-task?mode=ai');
+              router.push('/(screens)/add-task?mode=ai');
             }}
           />
           <FAB
@@ -177,7 +177,7 @@ export default function Index() {
             style={styles.addButton}
             onPress={() => {
               setIsAddMenuVisible(false);
-              router.push('/add-task');
+              router.push('/(screens)/add-task');
             }}
           />
         </View>

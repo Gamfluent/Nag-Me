@@ -10,15 +10,20 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.4",
+    "@motionone/dom": "^10.18.0",
+    "@motionone/types": "^10.17.1",
+    "@motionone/utils": "^10.18.0",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-native-community/datetimepicker": "8.2.0",
     "expo": "~52.0.40",
     "expo-constants": "^17.0.8",
+    "expo-dev-client": "~5.0.14",
     "expo-device": "^7.0.2",
     "expo-notifications": "^0.29.14",
     "expo-router": "^4.0.19",
     "expo-splash-screen": "^0.29.22",
     "expo-status-bar": "~2.0.1",
+    "moti": "^0.30.0",
     "react": "18.3.1",
     "react-native": "0.76.7",
     "react-native-calendar-strip": "^1.4.2",
@@ -30,8 +35,7 @@
     "react-native-web": "~0.19.13",
     "react-native-wheel-pick": "^1.2.4",
     "uuid": "^11.1.0",
-    "zustand": "^5.0.3",
-    "expo-dev-client": "~5.0.14"
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
